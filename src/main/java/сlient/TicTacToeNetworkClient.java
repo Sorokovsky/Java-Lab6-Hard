@@ -77,7 +77,7 @@ public class TicTacToeNetworkClient extends JFrame {
                     String playerType = line.substring(7);
                     myPlayer = playerType.equals("Christ") ? Player.Christ : Player.ZERO;
                     log("Ви граєте за " + (myPlayer == Player.Christ ? "Хрестик (X)" : "Нулик (O)"));
-                    statusLabel.setText("Ви граєте за " + (myPlayer == Player.Christ ? "X" : "O"));
+                    statusLabel.setText("Ви граєте за " + (myPlayer.value()));
 
                 } else if (line.equals("START")) {
                     log("Гра починається!");
