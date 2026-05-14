@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class ServerWindow extends JFrame implements ServerListener {
     private final ControlPanel controlPanel;
-    private final LogPanel  logPanel;
+    private final LogPanel logPanel;
     private GameServer gameServer;
 
     public ServerWindow() {

@@ -15,8 +15,10 @@ import java.net.Socket;
 public class GameSession implements Runnable {
     private final Socket playerX;
     private final Socket playerO;
-    private PrintWriter outX, outO;
-    private BufferedReader inX, inO;
+    private final PrintWriter outX;
+    private final PrintWriter outO;
+    private final BufferedReader inX;
+    private final BufferedReader inO;
     private final TikTakToeLogic game;
     private final ServerListener listener;
 
@@ -56,7 +58,6 @@ public class GameSession implements Runnable {
             Player current = game.currentPlayer();
             BufferedReader currentIn = (current == Player.Christ) ? this.inX : this.inO;
             PrintWriter currentOut = (current == Player.Christ) ? this.outX : this.outO;
-            PrintWriter otherOut = (current == Player.Christ) ? this.outO : this.outX;
             final var message = currentIn.readLine();
             final var parsed = MessageParser.parse(message);
             if (parsed.type() == MessageType.MOVE && parsed.data() instanceof int[] move) {
