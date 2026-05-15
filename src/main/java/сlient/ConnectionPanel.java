@@ -25,6 +25,7 @@ public class ConnectionPanel extends JPanel {
                 JOptionPane.showMessageDialog(this, "Невірний порт!");
             }
         });
+        add(portField);
         add(connectButton);
     }
 

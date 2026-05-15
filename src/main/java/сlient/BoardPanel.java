@@ -6,10 +6,8 @@ import java.util.function.BiConsumer;
 
 public class BoardPanel extends JPanel {
     private final JButton[][] buttons;
-    private final BiConsumer<Integer, Integer> moveHandler;
 
     public BoardPanel(BiConsumer<Integer, Integer> moveHandler) {
-        this.moveHandler = moveHandler;
         setLayout(new GridLayout(3, 3));
         buttons = new JButton[3][3];
         for (int i = 0; i < 3; i++) {

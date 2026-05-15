@@ -102,8 +102,7 @@ public class TicTacToeNetworkClient extends JFrame {
                 } else if (line.startsWith("WIN")) {
                     char winner = line.charAt(4);
                     gameActive = false;
-                    boolean isWinner = (winner == 'X' && myPlayer == Player.Christ) ||
-                            (winner == 'O' && myPlayer == Player.ZERO);
+                    boolean isWinner = winner == myPlayer.value();
                     if (isWinner) {
                         log("ВИ ПЕРЕМОГЛИ!");
                         statusLabel.setText("ВИ ПЕРЕМОГЛИ!");
